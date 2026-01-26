@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PixelCorest | DC2</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PixelCorest custom code key DC2">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Consolas, Monaco, monospace;
+      background-color: #0f1115;
+      color: #e6e6e6;
+    }
+
+    h1 {
+      color: #6cf2c2;
+      margin-bottom: 5px;
+    }
+
+    .key {
+      color: #9aa4ff;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    pre {
+      background-color: #161a22;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.5;
+      border: 1px solid #22283a;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>PixelCorest</h1>
+  <div class="key">Key: DC2</div>
+
+  <pre>
+/*
+  Copy and use freely
+*/
+# DATA CLEANING AND replace with zero
+import pandas as pd
+
+data = {
+    'A': [1,2,3, None, 5],
+    'B': [None, 2,3,4,5],
+    'C': [1, 2, None, None, 5],
+}
+
+df = pd.DataFrame(data)
+print ('Original data:\n', df)
+
+df.fillna (0, inplace=True)
+
+print ("\n Data after filling NaN with 0:\n", df)
+
+  </pre>
+
+  <footer>
+    © PixelCorest · Personal Code Vault
+  </footer>
+
+</body>
+</html>
