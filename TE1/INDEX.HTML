@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PixelCorest | TE1</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PixelCorest custom code key TE1">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Consolas, Monaco, monospace;
+      background-color: #0f1115;
+      color: #e6e6e6;
+    }
+
+    h1 {
+      color: #6cf2c2;
+      margin-bottom: 5px;
+    }
+
+    .key {
+      color: #9aa4ff;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    pre {
+      background-color: #161a22;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.5;
+      border: 1px solid #22283a;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>PixelCorest</h1>
+  <div class="key">Key: TE1</div>
+
+  <pre>
+/*
+  Copy and use freely
+*/
+# Target encoding 
+import pandas as pd
+from category_encoders import TargetEncoder
+from sklearn.preprocessing import LabelEncoder
+
+data = {
+    'Fruit': ['Apple', 'Banana', 'Orange', 'Apple', 'Banana'],
+    'Color': ['Red', 'Yellow', 'Orange', 'Green', 'Yellow']
+}
+df = pd.DataFrame(data)
+print("Original Dataset:")
+print(df)
+
+label_encoder = LabelEncoder()
+df['Fruit'] = label_encoder.fit_transform(df['Fruit'])
+
+target_encoder = TargetEncoder()
+df_target_encoded = df.copy()
+df_target_encoded[['Fruit', 'Color']] = target_encoder.fit_transform(df[['Fruit', 'Color']], df['Fruit'])
+
+print("\nAfter Target Encoding:")
+print(df_target_encoded)
+
+  </pre>
+
+  <footer>
+    © PixelCorest · Personal Code Vault
+  </footer>
+
+</body>
+</html>
